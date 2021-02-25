@@ -22,8 +22,14 @@ var searchPh = unsplash.photos.getRandom({
     else {
         // handle success here
         var result = data.response;
+        var images = [];
+        for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {
+            var image = result_1[_i];
+            images.push(image.urls.regular);
+            console.log(image);
+        }
         // according to the photos' data structure
-        return result;
+        return images;
     }
 });
 exports.searchPh = searchPh;

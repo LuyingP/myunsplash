@@ -17,10 +17,19 @@ const searchPh=unsplash.photos.getRandom({
     } else {
       // handle success here
       const result = data.response;
+      let images:string[]=[];
+      for(let image of result){
+          images.push(image.urls);
+         
+      }
+    
       // according to the photos' data structure
-      return result;
+      return images;
     }
   });
+
+
+
 
 export{searchPh} ;
 
